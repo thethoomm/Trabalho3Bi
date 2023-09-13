@@ -50,21 +50,11 @@ public class Ferramenta extends Categoria {
 
         return str;
     }
-    public int adicionarCategoria(Categoria _categoria) {
-        try {
-            this.categorias.add(_categoria);
-            return 200;
-        } catch (Exception e) {
-            return 500;
-        }
+    public void adicionarCategoria(Categoria _categoria) {
+        this.categorias.add(_categoria);
     }
 
-    public int removerCategoria(Categoria _categoria) {
-        try {
-            this.categorias.remove(_categoria);
-            return 200;
-        } catch (Exception e) {
-            return 500;
-        }
+    public void removerCategoria(Categoria _categoria) {
+        this.categorias.remove(_categoria);
     }
 }

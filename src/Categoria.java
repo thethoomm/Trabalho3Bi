@@ -1,40 +1,43 @@
 public class Categoria {
     // variaveis
-    private String categoriaNome;
+    private String nome;
+
+
+    // construtores
+    public Categoria(){}
+    public Categoria(String _nome) {
+        this.nome = _nome;
+    }
 
     // encapsulamento
     public void setCategoriaNome(String _categoriaNome)
     {
-        this.categoriaNome = _categoriaNome;
+        this.nome = _categoriaNome;
     }
 
     public String getCategoriaNome()
     {
-        return this.categoriaNome;
+        return this.nome;
     }
 
     // metodos
     @Override
     public String toString() {
-        String str = "Categoria: " + this.categoriaNome;
+        String str = "Categoria: " + this.nome;
         return str;
     }
-    public int atualizarCategoria(Categoria categoriaNova, Categoria categoriaAntiga) {
-        try {
+    public boolean atualizarCategoria(Categoria categoriaNova, Categoria categoriaAntiga) {
             if (categoriaAntiga.getCategoriaNome() == null) {
-                return 404;
+                return false;
             }
             else {
                 if (categoriaNova.getCategoriaNome() == null) {
                     categoriaAntiga.setCategoriaNome(categoriaNova.getCategoriaNome());
-                    return 200;
+                    return true;
                 } else {
-                    return 400;
+                    return false;
                 }
             }
-        } catch (Exception e) {
-            return 500;
-        }
     }
 
 }
