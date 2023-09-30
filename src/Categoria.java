@@ -23,7 +23,7 @@ public class Categoria {
     // metodos
     @Override
     public String toString() {
-        String str = "Categoria: " + this.nome;
+        String str = this.nome;
         return str;
     }
     public boolean atualizarCategoria(Categoria categoriaNova, Categoria categoriaAntiga) {
